@@ -20,7 +20,51 @@
   gap: 15px;
 }
 
+/* VIDEO */
+
+.videos__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.videos__item {
+  height: 303px;
+  width: 280px;
+  flex-grow: 1;
+}
+
+/* DESCRIÇÃO VIDEOS */
+
+.descricao-video {
+  display: grid;
+  grid-template-areas:
+    "img h3"
+    "img p";
+  text-align: start;
+  column-gap: 1rem;
+  row-gap: 10px;
+  margin-top: 1rem;
+}
+
+.descricao-video img {
+  grid-area: img;
+}
+
+.descricao-video h3 {
+  grid-area: h3;
+  font-weight: 700;
+  color: #444444;
+}
+
+.descricao-video p {
+  grid-area: p;
+  color: #444444;
+  font-size: 14px;
+}
+
 /* MENU */
+
 .menu__container {
   position: fixed;
   bottom: 0%;
@@ -39,9 +83,9 @@
 }
 
 .menu__itens {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .menu__lista:nth-child(2),
@@ -64,8 +108,68 @@
     display: block;
   }
 
+  /* MENU */
+  .menu__container {
+    height: auto;
+    width: 74px;
+    left: 0%;
+    top: 80px;
+  }
+
+  .menu__lista {
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 15px;
+    gap: 33px;
+  }
+
   /* RODAPE */
   .rodape__container {
     justify-content: space-between;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Menu */
+  .menu__container {
+    width: 239px;
+    overflow: scroll;
+  }
+
+  .menu__lista:nth-child(2),
+  .menu__lista:nth-child(3),
+  .menu__lista:nth-child(4) {
+    display: flex;
+  }
+
+  .menu__lista {
+    height: auto;
+    padding: 20px 17px 20px 15px;
+  }
+
+  .menu__itens {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .menu__lista:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+
+  .jogos {
+    order: 3;
+  }
+
+  .filmes {
+    order: 2;
+  }
+
+  .premium {
+    order: 1;
+  }
+
+  .maispagina {
+    order: 4;
   }
 }
